@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+static char *font = "mono:pixelsize=16:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -16,7 +16,8 @@ static int borderpx = 2;
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
  */
-static char *shell = "/bin/sh";
+// static char *shell = "/bin/sh";
+static char *shell = "/usr/bin/zsh";
 char *utmp = NULL;
 char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 
@@ -80,12 +81,14 @@ char *termname = "st-256color";
  *
  *	stty tabs
  */
-unsigned int tabspaces = 8;
+unsigned int tabspaces = 4;
 
 /* bg opacity */
-float alpha = 0.8;
+float alpha = 0.85;
 
+/* ========================== DEFAULT THEME ======================= */
 /* Terminal colors (16 first used in escape sequence) */
+
 static const char *colorname[] = {
 	/* 8 normal colors */
 	"black",
@@ -120,10 +123,60 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
+
 unsigned int defaultfg = 7;
 unsigned int defaultbg = 258;
 static unsigned int defaultcs = 256;
 static unsigned int defaultrcs = 257;
+
+/* ====================================================================== */
+
+/* ============== CUSTOM NAVY AND IVORY ================================ */
+// static const char *colorname[] = {
+// 
+//   /* 8 normal colors */
+//   [0] = "#032c36", /* black   */
+//   [1] = "#c2454e", /* red     */
+//   [2] = "#7cbf9e", /* green   */
+//   [3] = "#8a7a63", /* yellow  */
+//   [4] = "#2e3340", /* blue    */
+//   [5] = "#ff5879", /* magenta */
+//   [6] = "#44b5b1", /* cyan    */
+//   [7] = "#f2f1b9", /* white   */
+// 
+//   /* 8 bright colors */
+//   [8]  = "#065f73", /* black   */
+//   [9]  = "#ef5847", /* red     */
+//   [10] = "#a2d9b1", /* green   */
+//   [11] = "#beb090", /* yellow  */
+//   [12] = "#61778d", /* blue    */
+//   [13] = "#ff99a1", /* magenta */
+//   [14] = "#9ed9d8", /* cyan    */
+//   [15] = "#f6f6c9", /* white   */
+// 
+//   /* special colors */
+//   [256] = "#021b21", /* background */
+//   [257] = "#e8dfd6", /* foreground */
+//   [258] = "#03242d", /*Special rcs*/
+// };
+
+/*
+ * Default colors (colorname index)
+ * foreground, background, cursor
+ */
+// unsigned int defaultfg = 257;
+// unsigned int defaultbg = 256;
+// static unsigned int defaultcs = 257;
+// static unsigned int defaultrcs = 258;
+
+/*
+ * Colors used, when the specific fg == defaultfg. So in reverse mode this
+ * will reverse too. Another logic would only make the simple feature too
+ * complex.
+ */
+// static unsigned int defaultitalic = 7;
+// static unsigned int defaultunderline = 7;
+/* =========================================================================== */
 
 /*
  * Default shape of cursor
