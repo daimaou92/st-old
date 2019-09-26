@@ -84,38 +84,32 @@ char *termname = "st-256color";
 unsigned int tabspaces = 4;
 
 /* bg opacity */
-float alpha = 0.85;
+float alpha = 0.90;
 
 /* ========================== DEFAULT THEME ======================= */
 /* Terminal colors (16 first used in escape sequence) */
 
 static const char *colorname[] = {
-	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
-
-	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
-
-	[255] = 0,
-
-	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
+	"#000000",
+	"#ff0000",
+	"#38de21",
+	"#ffe50a",
+	"#1460d2",
+	"#ff005d",
+	"#00bbbb",
+	"#bbbbbb",
 	"#555555",
-	"black",
+	"#f40e17",
+	"#3bd01d",
+	"#edc809",
+	"#5555ff",
+	"#ff55ff",
+	"#6ae3fa",
+	"#ffffff",
+	[255] = 0,
+	"#132738", /*256:bg*/
+	"#f0cc09", /*257:cursor*/
+	"#ffffff", /*258:fg*/
 };
 
 
@@ -124,10 +118,10 @@ static const char *colorname[] = {
  * foreground, background, cursor, reverse cursor
  */
 
-unsigned int defaultfg = 7;
-unsigned int defaultbg = 258;
-static unsigned int defaultcs = 256;
-static unsigned int defaultrcs = 257;
+unsigned int defaultfg = 258;
+unsigned int defaultbg = 256;
+static unsigned int defaultcs = 257;
+static unsigned int defaultrcs = 258;
 
 /* ====================================================================== */
 
